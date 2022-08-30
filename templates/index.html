@@ -1,0 +1,47 @@
+<head>
+    <title>Ordering System</title>
+
+    <style>
+        .form-submit{
+            border:1px solid #000;
+            width: 400px;
+            padding: 25px;
+        }
+
+        .form-input{
+            display: block;
+            margin: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" class="form-submit" method="post">
+        <h1>Ordering Form </h1>
+        <input class="form-input" type="text" name="name" placeholder="Customer Name">
+        <input class="form-input" type="text" name="email" placeholder="Email">
+        <input class="form-input" type="text" name="address" placeholder="Address">
+        <input class="form-input" type="text" name="contact" placeholder="Contact">
+        <input class="form-input" type="Submit" value="Submit">
+    </form>
+</body>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Contact</th>
+    </tr>
+    {%for record in records%}
+    <tr>
+        <td>{{record['customer_no']}}</td>
+        <td>{{record['name']}}</td>
+        <td>{{record['email']}}</td>
+        <td>{{record['address']}}</td>
+        <td>{{record['phone']}}</td>
+    </tr>
+    {%endfor%}
+</table>
